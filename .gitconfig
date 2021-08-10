@@ -1,0 +1,9 @@
+[user]
+	name = paupolytropo
+	email = pau@polytropo.es
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
