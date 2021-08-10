@@ -3,10 +3,6 @@
 # Install common package
 sudo dnf install -y $(cat $(dirname $(readlink -f $0))/../modules.txt)
 
-# bashrc
-rm -rf $(pwd)/.bashrc
-ln -s $(dirname $(readlink -f $0))/../os/bashrc -r $(pwd)/.bashrc
-
 # Dotly
 bash <(curl -s https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/installer)
 
