@@ -27,3 +27,6 @@ sudo bash $(dirname $(readlink -f $0))/i3.sh
 
 # git
 sudo bash $(dirname $(readlink -f $0))/git.sh
+
+# docker
+sudo bash $(dirname $(readlink -f $0))/docker.sh
