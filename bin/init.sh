@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Repositories
-sudo bash $(dirname $(readlink -f $0))/repositories.sh
 sudo dnf update -y
 
 # Install common package

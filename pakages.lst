@@ -27,14 +27,12 @@ gcc-c++
 git
 gnome-font-viewer
 gnome-keyring-pam
-google-chrome-stable
 i3-gaps
 initscripts
 kernel-modules-extra
 langpacks-en
 libxcb-devel
 libxkbcommon-devel
-lpf-spotify-client
 nautilus
 neovim
 npm
@@ -48,7 +46,6 @@ rofi
 rofimoji
 rpmfusion-free-release
 rpmfusion-nonfree-release
-rpmsphere-release
 snapd
 spotify-client
 system-config-printer
