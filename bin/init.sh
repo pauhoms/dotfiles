@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install common package
-sudo dnf install -y $(cat $(dirname $(readlink -f $0))/../modules.txt)
+sudo < $(dirname $(readlink -f $0))/../pakages.lst xargs dnf -y install
 
 # Dotly
 bash <(curl -s https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/installer)
