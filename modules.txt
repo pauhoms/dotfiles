@@ -11,12 +11,9 @@ npm
 php
 php-mysqlnd
 picom
-remi-release
 rofi
 rofimoji
 snapd
-spotify-client
-telegram-desktop
 terminator
 ulauncher
 xcompmgr
