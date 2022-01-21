@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Repositories
-sudo dnf update -y
+sudo apt-get install -y
 
 # Install common package
-sudo < $(dirname $(readlink -f $0))/../modules.txt xargs dnf -y install
+sudo apt-get install $(grep -vE "^\s*#" modules.txt  | tr "\n" " ")
 
 # Dotly
 bash <(curl -s https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/installer)
@@ -20,9 +20,6 @@ sudo bash $(dirname $(readlink -f $0))/neovim.sh
 
 # alacritty
 sudo bash $(dirname $(readlink -f $0))/alacritty.sh
-
-# i3
-sudo bash $(dirname $(readlink -f $0))/i3.sh
 
 # git
 sudo bash $(dirname $(readlink -f $0))/git.sh

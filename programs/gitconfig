@@ -1,9 +1,11 @@
 [user]
-	name = paupolytropo
-	email = pau@polytropo.es
+	name = pauhoms
+	email = pauhomsjimenez1@gmail.com
 [alias]
 	co = checkout
 	br = branch
 	ci = commit
 	st = status
 	unstage = reset HEAD --
+[credential]
+	helper = cache

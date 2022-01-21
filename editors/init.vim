@@ -25,10 +25,10 @@ set cmdheight=2
 set updatetime=50
 set shortmess+=c
 set omnifunc=syntaxcomplete#Complete
+set shiftwidth=4
+set nofixendofline
+let NERDTreeShowHidden=1
 
-if &filetype == "typescript" || &filetype == "typescriptreact"
-    set shiftwidth=2
-endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -63,6 +63,8 @@ Plug 'neoclide/coc-tslint'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc-css'
 Plug 'neoclide/coc-eslint'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
@@ -88,8 +90,15 @@ augroup nerd_loader
 augroup END
 
 " Search
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh']
 noremap <silent>fs :Files<cr> 
+noremap <silent>fd :History<cr> 
+noremap <silent>fa :Ag<cr> 
 
 " Git
 nnoremap <silent>ga :G<CR> 
@@ -114,5 +123,36 @@ nmap <silent>rr <Plug>(coc-rename)
 nmap <silent>gr <Plug>(coc-references)
 
 " Identation
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char_list = ['┊']
+" let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_leadingSpaceChar = '·'
 
+
+" Windows
+nnoremap <silent>mn :vertical resize +20<CR>
+nnoremap <silent>mb :vertical resize -20<CR>
+
+
+" TypeScript
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+if &filetype == "typescript" || &filetype == "typescriptreact" || &filetype == "javascript" || &filetype == "javascriptreact"
+    set shiftwidth=2
+endif
+
+
+" dark red
+hi tsxTagName guifg=#E06C75
+hi tsxComponentName guifg=#E06C75
+hi tsxCloseComponentName guifg=#E06C75
+
+" orange
+hi tsxCloseString guifg=#F99575
+hi tsxCloseTag guifg=#F99575
+hi tsxCloseTagName guifg=#F99575
+hi tsxAttributeBraces guifg=#F99575
+hi tsxEqual guifg=#F99575
+
+" yellow
+hi tsxAttrib guifg=#F8BD7F cterm=italic
