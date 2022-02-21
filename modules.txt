@@ -8,6 +8,5 @@ php
 php-mysql
 rofi
 snapd
-ulauncher
 zsh
 silversearcher-ag

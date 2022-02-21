@@ -28,7 +28,7 @@ set omnifunc=syntaxcomplete#Complete
 set shiftwidth=4
 set nofixendofline
 let NERDTreeShowHidden=1
-
+let g:gitgutter_realtime=0
 
 call plug#begin('~/.vim/plugged')
 
@@ -47,7 +47,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-rooter'
-
 " PHP
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 Plug 'yaegassy/coc-intelephense', {'do': 'npm install --frozen-lockfile'}
@@ -68,6 +67,8 @@ Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
+set encoding=utf8
+let g:airline_powerline_fonts = 1
 " Theme
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = "hard"
@@ -124,8 +125,8 @@ nmap <silent>gr <Plug>(coc-references)
 
 " Identation
 let g:indentLine_char_list = ['┊']
-" let g:indentLine_leadingSpaceEnabled = 1
-" let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
 
 
 " Windows
@@ -156,3 +157,4 @@ hi tsxEqual guifg=#F99575
 
 " yellow
 hi tsxAttrib guifg=#F8BD7F cterm=italic
+
