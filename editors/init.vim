@@ -27,6 +27,7 @@ set shortmess+=c
 set omnifunc=syntaxcomplete#Complete
 set shiftwidth=4
 set nofixendofline
+set colorcolumn=80
 let NERDTreeShowHidden=1
 let g:gitgutter_realtime=0
 
@@ -47,6 +48,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-rooter'
+Plug 'othree/yajs.vim'
+
 " PHP
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 Plug 'yaegassy/coc-intelephense', {'do': 'npm install --frozen-lockfile'}
@@ -63,7 +66,7 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc-css'
 Plug 'neoclide/coc-eslint'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -142,7 +145,7 @@ if &filetype == "typescript" || &filetype == "typescriptreact" || &filetype == "
     set shiftwidth=2
 endif
 
-
+nnoremap <silent>er :CocCommand eslint.executeAutofix<CR>
 " dark red
 hi tsxTagName guifg=#E06C75
 hi tsxComponentName guifg=#E06C75

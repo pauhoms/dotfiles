@@ -1,5 +1,5 @@
 # Dotfiles 📁
-⚠ This configuration is designed by fedora.
+⚠ This configuration is designed by debian.
 
 ## Run dotfiles 📂
 - `cd ~`
