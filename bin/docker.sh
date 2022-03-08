@@ -15,3 +15,4 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 sudo systemctl start docker
 sudo usermod -aG docker $USER
+newgrp docker
