@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Repositories
+sudo add-apt-repository ppa:mmstick76/alacritty
 sudo apt-get install -y
 
 # Install common package
-sudo apt-get install $(grep -vE "^\s*#" modules.txt  | tr "\n" " ")
+sudo apt-get install $(grep -vE "^\s*#" dotfiles/modules.txt  | tr "\n" " ")
 
 # Dotly
 bash <(curl -s https://raw.githubusercontent.com/CodelyTV/dotly/HEAD/installer)
